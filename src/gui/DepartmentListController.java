@@ -18,7 +18,7 @@ import model.entities.Department;
 import model.services.DepartmentService;
 
 public class DepartmentListController implements Initializable {
-	
+
 	private DepartmentService service;
 	
 	@FXML
@@ -44,12 +44,10 @@ public class DepartmentListController implements Initializable {
 		this.service = service;
 	}
 	
-
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		initializeNodes();
 	}
-
 
 	private void initializeNodes() {
 		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -57,7 +55,6 @@ public class DepartmentListController implements Initializable {
 		
 		Stage stage = (Stage) Main.getMainScene().getWindow();
 		tableViewDepartment.prefHeightProperty().bind(stage.heightProperty());
-		
 	}
 	
 	public void updateTableView() {
@@ -67,7 +64,5 @@ public class DepartmentListController implements Initializable {
 		List<Department> list = service.findAll();
 		obsList = FXCollections.observableArrayList(list);
 		tableViewDepartment.setItems(obsList);
-		
 	}
-
 }
