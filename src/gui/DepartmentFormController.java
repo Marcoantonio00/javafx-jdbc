@@ -60,7 +60,7 @@ public class DepartmentFormController implements Initializable {
 			Utils.currentStage(event).close();
 		}
 		catch (DbException e) {
-			Alerts.showAlert("Error saving obkect", null, e.getMessage(), AlertType.ERROR);
+			Alerts.showAlert("Error saving object", null, e.getMessage(), AlertType.ERROR);
 		}
 		
 	}
